@@ -176,6 +176,17 @@ POST /api/drills
 }
 ```
 
+## Working Screenshots
+
+## Admin Dashboard
+![Admin Dashboard](./screenshot/Admin%20Dashboard.png)
+## Crew-User Dashboard
+![Crew-User Dashboard](./screenshot/Crew-User%20Dashboard.png)
+## Login Page
+![Login Page](./screenshot/Login%20Page.png)
+## Signup Page
+![Signup Page](./screenshot/Signup%20Page.png)
+
 #### Author
 ```
 Sai Kiran Vakada
