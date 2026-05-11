@@ -1,0 +1,15 @@
+FROM eclipse-temurin:21-jdk AS build
+WORKDIR /app
+COPY .mvn .mvn
+COPY mvnw mvnw
+COPY mvnw.cmd mvnw.cmd
+COPY pom.xml pom.xml
+COPY src src
+RUN chmod +x mvnw && ./mvnw -DskipTests package
+
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+ENV TZ=UTC
+COPY --from=build /app/target/marine-backend-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-Duser.timezone=UTC", "-jar", "app.jar"]
